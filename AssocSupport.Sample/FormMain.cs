@@ -1,5 +1,8 @@
 ﻿using AssocSupport.Models;
+using AssocSupport.Sample.Properties;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AssocSupport.Sample
@@ -9,6 +12,19 @@ namespace AssocSupport.Sample
         public FormMain()
         {
             InitializeComponent();
+
+            // 리소스 추출
+            Directory.CreateDirectory($@"{Application.StartupPath}\Resources");
+            WriteResource($@"{Application.StartupPath}\Resources\Logo.ico", Resources.Logo);
+            WriteResource($@"{Application.StartupPath}\Resources\Sample.ico", Resources.Sample);
+        }
+
+        private void WriteResource(string path, Icon icon)
+        {
+            using (var fileStream = new FileStream(path, FileMode.Create))
+            {
+                icon.Save(fileStream);
+            }
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
@@ -54,7 +70,7 @@ namespace AssocSupport.Sample
         private void BtnUnregister_Click(object sender, EventArgs e)
         {
             // 소프트웨어 해제
-            if(AssociationUtility.Unregister("AssocSupport Sample", "Kodnix Software"))
+            if(AssociationUtility.Unregister("MyApp", "Kodnix"))
             {
                 MessageBox.Show("해제 성공", "결과", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
