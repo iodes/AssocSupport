@@ -2,19 +2,12 @@
 using AssocSupport.Natives;
 using Microsoft.Win32;
 using System;
+using System.Diagnostics;
 
 namespace AssocSupport
 {
     public static class AssociationUtility
     {
-        public static bool IsRegistered(string name, string companyName)
-        {
-            var companyPath = $@"Software\{companyName}";
-            var softwarePath = $@"{companyPath}\{name}";
-
-            return Registry.LocalMachine.OpenSubKey(softwarePath) != null;
-        }
-
         public static bool Register(Software target)
         {
             // Software 등록
@@ -83,6 +76,21 @@ namespace AssocSupport
             }
 
             return false;
+        }
+
+        public static bool IsRegistered(string name, string companyName)
+        {
+            // Software 검사
+            var companyPath = $@"Software\{companyName}";
+            var softwarePath = $@"{companyPath}\{name}";
+
+            return Registry.LocalMachine.OpenSubKey(softwarePath) != null;
+        }
+
+        public static void LaunchUI()
+        {
+            var controlUI = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Windows)}\System32\control.exe";
+            Process.Start(controlUI, "/name Microsoft.DefaultPrograms /page pageDefaultProgram");
         }
     }
 }
