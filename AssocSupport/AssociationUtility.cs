@@ -7,6 +7,14 @@ namespace AssocSupport
 {
     public static class AssociationUtility
     {
+        public static bool IsRegistered(string name, string companyName)
+        {
+            var companyPath = $@"Software\{companyName}";
+            var softwarePath = $@"{companyPath}\{name}";
+
+            return Registry.LocalMachine.OpenSubKey(softwarePath) != null;
+        }
+
         public static bool Register(Software target)
         {
             // Software 등록
