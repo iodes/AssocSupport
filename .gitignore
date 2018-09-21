@@ -1,5 +1,4 @@
 *.suo
-*.dll
 *.sdf
 *.ide
 *.opensdf
@@ -11,4 +10,3 @@
 /.vs
 /Debug
 /packages
-!NuGet/
