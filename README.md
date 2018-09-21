@@ -1,6 +1,6 @@
 # AssocSupport
-[![Release](https://img.shields.io/badge/Release-v1.0.0-brightgreen.svg)](https://github.com/iodes/AssocSupport/releases)
-[![NuGet](https://img.shields.io/badge/NuGet-v1.0.0-blue.svg)](https://www.nuget.org/packages/AssocSupport/)  
+[![Release](https://img.shields.io/badge/Release-v1.1.0-brightgreen.svg)](https://github.com/iodes/AssocSupport/releases)
+[![NuGet](https://img.shields.io/badge/NuGet-v1.1.0-blue.svg)](https://www.nuget.org/packages/AssocSupport/)  
 Windows File Associations Support Library
 
 # Getting Started
