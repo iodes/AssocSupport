@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AssocSupport</id>
+    <version>1.1.0</version>
+    <authors>Kodnix</authors>
+    <owners>Kodnix</owners>
+	<iconUrl>https://github.com/iodes/AssocSupport/tree/master/NuGet/Logo.png</iconUrl>
+    <licenseUrl>https://github.com/iodes/AssocSupport/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/iodes/AssocSupport</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows File Associations Support Library</description>
+    <releaseNotes>Added some new useful features</releaseNotes>
+    <copyright>Copyright © Kodnix. All rights reserved.</copyright>
+    <tags>File System Utility Extension Associations</tags>
+  </metadata>
+</package>
